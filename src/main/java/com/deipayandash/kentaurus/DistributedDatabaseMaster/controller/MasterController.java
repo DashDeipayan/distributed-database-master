@@ -26,7 +26,7 @@ public class MasterController {
 	@GetMapping("/words")
 	public ResponseEntity<List<String>> getWords(){
 
-		return new ResponseEntity<>(new ArrayList<>(), HttpStatus.OK);
+		return new ResponseEntity<>(masterService.getNodes(), HttpStatus.OK);
 	}
 
 	@DeleteMapping("/words")

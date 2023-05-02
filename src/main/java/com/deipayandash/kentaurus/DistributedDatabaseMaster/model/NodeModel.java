@@ -9,50 +9,30 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class NodeModel {
 
-	private int NodeId;
+	private String message;
+	private String NodeId;
 
-	private String NodeAddress;
-
-	private List<String> words;
-	private boolean isActive;
-
-	public boolean isActive() {
-		return isActive;
-	}
-
-	public List<String> getWords() {
-		return words;
-	}
-
-	public void setWords(List<String> words) {
-		this.words = words;
-	}
-
-	public void setActive(boolean active) {
-		isActive = active;
-	}
-
-	public NodeModel(int nodeId, String nodeAddress) {
+	public NodeModel(String nodeId,String message) {
 		NodeId = nodeId;
-		NodeAddress = nodeAddress;
+		this.message=message;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public NodeModel() {
 	}
 
-	public int getNodeId() {
+	public String getNodeId() {
 		return NodeId;
 	}
 
-	public void setNodeId(int nodeId) {
+	public void setNodeId(String nodeId) {
 		NodeId = nodeId;
-	}
-
-	public String getNodeAddress() {
-		return NodeAddress;
-	}
-
-	public void setNodeAddress(String nodeAddress) {
-		NodeAddress = nodeAddress;
 	}
 }
