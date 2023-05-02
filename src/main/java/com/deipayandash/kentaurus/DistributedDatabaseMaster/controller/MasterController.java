@@ -18,8 +18,8 @@ public class MasterController {
 	@Autowired
 	MasterService masterService;
 	@GetMapping("/nodes")
-	public ResponseEntity<NodeModel> getAllNodes() throws ExecutionException, InterruptedException {
-		NodeModel nodeModel= masterService.getAllWords();
+	public ResponseEntity<List<NodeModel>> getAllNodes() throws ExecutionException, InterruptedException {
+		List<NodeModel> nodeModel= masterService.getAllWords();
 		return new ResponseEntity<>(nodeModel, HttpStatus.OK);
 	}
 
